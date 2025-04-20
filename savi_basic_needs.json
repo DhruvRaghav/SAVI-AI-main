@@ -1,0 +1,107 @@
+[
+    {
+        "user_query": "What is the average poverty rate from 2010 to 2012?",
+        "expected_sql": "SELECT AVG(\"Poverty Rate - Indiana State\") FROM savi_basic_needs_data WHERE \"Year\" BETWEEN 2010 AND 2012;",
+        "expected_result": [[14.14677592]]
+    },
+    {
+        "user_query": "Find the year with the highest poverty rate for Black individuals in Marion County",
+        "expected_sql": "SELECT Year, `Poverty Rate - Marion - Black` FROM savi_basic_needs_data ORDER BY `Poverty Rate - Marion - Black` DESC LIMIT 1;",
+        "expected_result": [[2015, 29.51482]]
+    },
+    {
+        "user_query": "What is the highest recorded poverty rate for Asian residents in Marion County?",
+        "expected_sql": "SELECT MAX(\"Poverty Rate - Marion - Asian\") FROM savi_basic_needs_data;",
+        "expected_result": [[24.51384182]]
+    },
+    {
+        "user_query": "What is the average household income in Marion County?",
+        "expected_sql": "SELECT AVG(\"Median Household Income - Marion County\") FROM savi_basic_needs_data;",
+        "expected_result": [[45440.5833333333]]
+    },
+    {
+        "user_query": "Which year had the highest poverty rate in Indiana State and return only the top result?",
+        "expected_sql": "SELECT Year, \"Poverty Rate - Indiana State\" FROM savi_basic_needs_data ORDER BY \"Poverty Rate - Indiana State\" DESC LIMIT 1;",
+        "expected_result": [[2014, 15.51085132]]
+    },
+    {
+        "user_query": "What is the highest poverty rate recorded in the entire state?",
+        "expected_sql": "SELECT MAX(\"Poverty Rate - Indiana State\") FROM savi_basic_needs_data;",
+        "expected_result": [[15.51085132]]
+    },
+    {
+        "user_query": "What is the highest recorded household income for Hispanic residents?",
+        "expected_sql": "SELECT MAX(\"Median Household Income - Hispanic\") FROM savi_basic_needs_data;",
+        "expected_result": [[46867]]
+    },
+    {
+        "user_query": "What is the average household income in Indiana State?",
+        "expected_sql": "SELECT AVG(\"Median Household Income - Indiana State\") FROM savi_basic_needs_data;",
+        "expected_result": [[52010.5]]
+    },
+    {
+        "user_query": "What is the average poverty rate for White residents in Marion County?",
+        "expected_sql": "SELECT AVG(\"Poverty Rate - Marion - White\") FROM savi_basic_needs_data;",
+        "expected_result": [[12.6814629708333]]
+    },
+    {
+        "user_query": "What was Indiana's state poverty rate in 2021?",
+        "expected_sql": "SELECT \"Poverty Rate - Indiana State\" FROM savi_basic_needs_data WHERE year = 2021;",
+        "expected_result": [[12.5021352]]
+    },
+    {
+        "user_query": "List years where Marion County's poverty rate was above 20% and show both the poverty rate and median household income.",
+        "expected_sql": "SELECT Year, `Poverty Rate - Marion County`, `Median Household Income - Marion County` FROM savi_basic_needs_data WHERE `Poverty Rate - Marion County` > 20 ORDER BY Year LIMIT 5;",
+        "expected_result": [[2013, 20.4222397, 42334], [2014, 21.01411111, 42378], [2015, 21.09117729, 42168], [2016, 20.54037481, 43369]]
+    },
+    {
+        "user_query": "Compare poverty rates across all racial groups in Marion County for 2020.",
+        "expected_sql": "SELECT `Poverty Rate - Marion - Asian` AS Asian_Poverty_Rate, `Poverty Rate - Marion - Black` AS Black_Poverty_Rate, `Poverty Rate - Marion - Hispanic` AS Hispanic_Poverty_Rate, `Poverty Rate - Marion - White` AS White_Poverty_Rate FROM savi_basic_needs_data WHERE YEAR = 2020;",
+        "expected_result": [[17.63818, 24.60015, 22.94663, 11.07324]]
+    },
+    {
+        "user_query": "Identify the top five years when the Hispanic poverty rate in Marion County exceeded the Black poverty rate.",
+        "expected_sql": "SELECT year, \"Poverty Rate - Marion - Hispanic\", \"Poverty Rate - Marion - Black\" FROM savi_basic_needs_data WHERE \"Poverty Rate - Marion - Hispanic\" > \"Poverty Rate - Marion - Black\" ORDER BY \"Poverty Rate - Marion - Hispanic\" - \"Poverty Rate - Marion - Black\" DESC LIMIT 5;",
+        "expected_result": [[2014, 40.15535, 28.99867], [2013, 39.17205, 28.67556], [2012, 36.61632, 27.11018], [2015, 38.88864, 29.51482], [2011, 34.50533, 25.43001]]
+    },
+    {
+        "user_query": "Show the years where Marion County had both high youth poverty (over 25%) and high elderly poverty (over 10%).",
+        "expected_sql": "SELECT year FROM savi_basic_needs_data WHERE \"Poverty Rate - Marion - Under 18\" > 25 AND \"Poverty Rate - Marion - Age 65 and Over\" > 10;",
+        "expected_result": [[2015], [2016], [2017], [2019]]
+    },
+    {
+        "user_query": "Compare ALICE households across different age groups for years where total poverty households exceeded 45,000.",
+        "expected_sql": "SELECT Year, `Marion County - ALICE Households by Age Under 25`, `Marion County - ALICE Households by Age 25-44`, `Marion County - ALICE Households by Age 45-64`, `Marion County - ALICE Households by Age 65 and Over` FROM savi_basic_needs_data WHERE `Marion County - Households by Income Level Below Poverty` > 45000 ORDER BY Year DESC LIMIT 5;",
+        "expected_result": [[2021, 8401, 42252, 29551, 33155]]
+    },
+    {
+        "user_query": "Find the top 5 years where Hispanic poverty rate was higher than both White and Asian poverty rates in Marion County.",
+        "expected_sql": "SELECT Year, `Poverty Rate - Marion - Hispanic`, `Poverty Rate - Marion - White`, `Poverty Rate - Marion - Asian` FROM savi_basic_needs_data WHERE `Poverty Rate - Marion - Hispanic` > `Poverty Rate - Marion - White` AND `Poverty Rate - Marion - Hispanic` > `Poverty Rate - Marion - Asian` ORDER BY `Poverty Rate - Marion - Hispanic` DESC LIMIT 5;",
+        "expected_result": [[2014, 40.15535098, 13.91602907, 23.81068197], [2013, 39.1720496, 13.468995, 24.51384182], [2015, 38.88863816, 13.94488819, 20.13932584], [2016, 37.5534135, 13.53381012, 21.85108418], [2012, 36.61632449, 13.04908291, 22.8442089]]
+    },
+    {
+        "user_query": "Show poverty rate in Marion County for the year 2015.",
+        "expected_sql": "SELECT \"Poverty Rate - Marion County\" FROM savi_basic_needs_data WHERE Year = 2015;",
+        "expected_result": [[21.09117729]]
+    },
+    {
+        "user_query": "What is the average household income in Indiana from 2010 to 2020?",
+        "expected_sql": "SELECT AVG(\"Median Household Income - Indiana State\") FROM savi_basic_needs_data WHERE Year BETWEEN 2010 AND 2020;",
+        "expected_result": [[51107.454545454544]]
+    },
+    {
+        "user_query": "Show poverty rates for Asian residents in Marion County for years after 2015.",
+        "expected_sql": "SELECT Year, \"Poverty Rate - Marion - Asian\" FROM savi_basic_needs_data WHERE Year > 2015;",
+        "expected_result": [[2016, 21.85108418], [2017, 21.45400593], [2018, 23.18273816], [2019, 18.31410256], [2020, 17.63817757], [2021, 14.95446824]]
+    },
+    {
+        "user_query": "How many records show a poverty rate above 15% in Indiana?",
+        "expected_sql": "SELECT COUNT(*) FROM savi_basic_needs_data WHERE \"Poverty Rate - Indiana State\" > 15;",
+        "expected_result": [[3]]
+    },
+    {
+        "user_query": "Show household income for years between 2012 and 2016 in Marion County.",
+        "expected_sql": "SELECT Year, \"Median Household Income - Marion County\" FROM savi_basic_needs_data WHERE Year BETWEEN 2012 AND 2016;",
+        "expected_result": [[2012, 42603], [2013, 42334], [2014, 42378], [2015, 42168], [2016, 43369]]
+    }
+]

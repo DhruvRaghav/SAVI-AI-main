@@ -1,0 +1,122 @@
+[
+    {
+        "user_query": "List 5 counties that have the highest unemployment rate.",
+        "expected_sql": "SELECT COUNTY, EP_UNEMP FROM svi_indiana_in ORDER BY EP_UNEMP DESC LIMIT 5;",
+        "expected_result": [["Lake", 43.6], ["Marion", 35.1], ["Lake", 28.9], ["Lake", 28.6], ["Monroe", 26.2]]
+    },
+    {
+        "user_query": "Which counties have a mobile phone penetration rate greater than 70%?",
+        "expected_sql": "SELECT COUNTY FROM svi_indiana_in WHERE EP_MOBILE > 70;",
+        "expected_result": [["Allen"], ["Marion"]]
+    },
+    {
+        "user_query": "Which counties have the largest area in square miles and return the top 3 results?",
+        "expected_sql": "SELECT COUNTY, AREA_SQMI FROM svi_indiana_in ORDER BY AREA_SQMI DESC LIMIT 3;",
+        "expected_result": [["Allen", 657.300160244498], ["LaPorte", 598.286378818888], ["Jasper", 559.679463774704]]
+    },
+    {
+        "user_query": "Which county has the highest percentage of single-parent households?",
+        "expected_sql": "SELECT \"COUNTY\", \"EP_SNGPNT\" FROM svi_indiana_in ORDER BY \"EP_SNGPNT\" DESC LIMIT 1;",
+        "expected_result": [["Lake", 43.7]]
+    },
+    {
+        "user_query": "What is the total number of uninsured people across all counties?",
+        "expected_sql": "SELECT SUM(\"E_UNINSUR\") AS \"Total Uninsured\" FROM svi_indiana_in;",
+        "expected_result": [[1056352]]
+    },
+    {
+        "user_query": "What is the average total population across all counties?",
+        "expected_sql": "SELECT AVG(\"E_TOTPOP\") FROM svi_indiana_in;",
+        "expected_result": [[7503.52156862745]]
+    },
+    {
+        "user_query": "Which county has the highest total population? Provide the population count as well?",
+        "expected_sql": "SELECT COUNTY, E_TOTPOP FROM svi_indiana_in ORDER BY E_TOTPOP DESC LIMIT 1;",
+        "expected_result": [["Marion", 957337]]
+    },
+    {
+        "user_query": "Find the total number of people below 150% of the poverty line across all counties.",
+        "expected_sql": "SELECT SUM(\"E_POV150\") AS \"Total People Below 150% Poverty Line\" FROM svi_indiana_in;",
+        "expected_result": [[2789556]]
+    },
+    {
+        "user_query": "What is the highest percentage of people with no high school diploma across all counties?",
+        "expected_sql": "SELECT \"COUNTY\", \"EP_NOHSDP\" FROM svi_indiana_in ORDER BY \"EP_NOHSDP\" DESC LIMIT 1;",
+        "expected_result": [["LaGrange", 73.9]]
+    },
+    {
+        "user_query": "Calculate the average household size across all counties.",
+        "expected_sql": "SELECT AVG(\"E_HH\" / (\"E_TOTPOP\" / \"E_HU\") * \"E_HU\") AS \"Average Household Size\" FROM svi_indiana_in;",
+        "expected_result": [[91152031.2083569]]
+    },
+    {
+        "user_query": "What is the total population of Adams County?",
+        "expected_sql": "SELECT E_TOTPOP FROM svi_indiana_in WHERE COUNTY = 'Adams' AND STATE = 'Indiana';",
+        "expected_result": [[35544], [4975], [4823], [5352], [3968], [6655], [3337], [6434]]
+    },
+    {
+        "user_query": "Which county has the highest percentage of households with no vehicles?",
+        "expected_sql": "SELECT COUNTY, EP_NOVEH FROM svi_indiana_in ORDER BY EP_NOVEH DESC LIMIT 1;",
+        "expected_result": [["LaGrange", 71.8]]
+    },
+    {
+        "user_query": "Find the average unemployment rate across all counties in Indiana.",
+        "expected_sql": "SELECT AVG(EP_UNEMP) FROM svi_indiana_in WHERE STATE = 'Indiana';",
+        "expected_result": [[0.0604481792717087]]
+    },
+    {
+        "user_query": "Find the top 8 counties with the highest percentage of limited English proficiency and their minority population percentage.",
+        "expected_sql": "SELECT COUNTY, EP_LIMENG, EP_MINRTY FROM svi_indiana_in ORDER BY EP_LIMENG DESC LIMIT 8;",
+        "expected_result": [["Marion", 39.5, 58.6], ["Marion", 27.1, 49.2], ["Marion", 25.2, 87.8], ["Marion", 24.6, 86.3], ["Marion", 21.4, 56.9], ["Marion", 20.0, 78.7], ["Marion", 17.3, 72.6], ["Marion", 17.2, 47.3]]
+    },
+    {
+        "user_query": "Which 5 counties have the highest housing burden among counties with above 50,000 total population?",
+        "expected_sql": "SELECT COUNTY, EP_HBURD as housing_burden  FROM svi_indiana_in WHERE E_TOTPOP > 50000 ORDER BY EP_HBURD DESC LIMIT 5;",
+        "expected_result": [["Marion", 31.4], ["Monroe", 31.0], ["Tippecanoe", 30.3], ["Vigo", 28.6], ["Vanderburgh", 27.8]]
+    },
+    {
+        "user_query": "Find the 7 counties with the highest number of households and their corresponding percentage of mobile homes",
+        "expected_sql": "SELECT COUNTY, E_HH, EP_MOBILE FROM svi_indiana_in ORDER BY E_HH DESC LIMIT 7;",
+        "expected_result": [["Marion", 377695, 1.5], ["Lake", 188646, 1.5], ["Allen", 147043, 3.2], ["Hamilton", 123066, 1.6], ["St. Joseph", 104380, 1.6], ["Vanderburgh", 76094, 2.5], ["Elkhart", 72362, 7.0]]
+    },
+    {
+        "user_query": "Which 5 counties have the highest combined percentage of unemployment and no high school diploma?",
+        "expected_sql": "SELECT COUNTY, EP_UNEMP as unemployment_pct, EP_NOHSDP as no_diploma_pct, (EP_UNEMP + EP_NOHSDP) FROM svi_indiana_in ORDER BY (EP_UNEMP + EP_NOHSDP) DESC LIMIT 5;",
+        "expected_result": [["LaGrange", 0.5, 73.9, 74.4], ["LaGrange", 4.7, 68.4, 73.1], ["Daviess", 0.6, 70.5, 71.1], ["Lake", 20.2, 43.8, 64.0], ["LaGrange", 0.0, 63.0, 63.0]]
+    },
+    {
+        "user_query": "Calculate the average poverty rate for counties with a population over 100,000.",
+        "expected_sql": "SELECT AVG(EP_POV150) as avg_poverty_rate FROM svi_indiana_in WHERE E_TOTPOP > 100000;",
+        "expected_result": [[22.1235294117647]]
+    },
+    {
+        "user_query": "List the counties where more than 40% of the population is over 65 years old and mention the percentages.",
+        "expected_sql": "SELECT COUNTY, EP_AGE65 FROM svi_indiana_in WHERE EP_AGE65 > 40 ORDER BY EP_AGE65 DESC;",
+        "expected_result": [["Vanderburgh", 100.0], ["Allen", 78.9], ["Lake", 43.5], ["LaPorte", 40.6]]
+    },
+    {
+        "user_query": "Find the county with the highest percentage of households with housing cost burden.",
+        "expected_sql": "SELECT COUNTY, EP_HBURD FROM svi_indiana_in ORDER BY EP_HBURD DESC LIMIT 1;",
+        "expected_result": [["Tippecanoe", 88.5]]
+    },
+    {
+        "user_query": "Calculate the average percentage of people with a disability for counties with population under 50,000.",
+        "expected_sql": "SELECT AVG(EP_DISABL) as avg_disability_percentage FROM svi_indiana_in WHERE E_TOTPOP < 50000;",
+        "expected_result": [[10.6331626848692]]
+    },
+    {
+        "user_query": "Find the county with the highest percentage of multi-unit structures.",
+        "expected_sql": "SELECT COUNTY, EP_MUNIT FROM svi_indiana_in ORDER BY EP_MUNIT DESC LIMIT 1;",
+        "expected_result": [["Marion", 87.5]]
+    },
+    {
+        "user_query": "Find the county with the highest percentage of households with crowding.",
+        "expected_sql": "SELECT COUNTY, EP_CROWD FROM svi_indiana_in ORDER BY EP_CROWD DESC LIMIT 1;",
+        "expected_result": [["Daviess", 19.0]]
+    },
+    {
+        "user_query": "Find the county with the lowest percentage of people aged 17 and under.",
+        "expected_sql": "SELECT COUNTY, EP_AGE17 FROM svi_indiana_in ORDER BY EP_AGE17 ASC LIMIT 1;",
+        "expected_result": [["Allen", 0.0]]
+    }
+]

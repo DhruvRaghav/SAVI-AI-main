@@ -1,0 +1,561 @@
+{"savi_basic_needs_data": {
+        "description": "Contains detailed information on poverty rates and median household incomes for various demographics and geographic regions within Indiana, specifically focusing on Marion County and its metropolitan areas.",
+        "columns": {
+            "Year": {
+                "description": "The year in which the data was collected"
+            },
+            "Poverty Rate - Indiana State": {
+                "description": "The overall poverty rate for the entire state of Indiana"
+            },
+            "Poverty Rate - Metropolitan IN": {
+                "description": "The poverty rate for metropolitan areas within Indiana"
+            },
+            "Poverty Rate - Marion County": {
+                "description": "The specific poverty rate for Marion County"
+            },
+            "Poverty Rate - Marion - Asian": {
+                "description": "The poverty rate in Marion County for the Asian demographic"
+            },
+            "Poverty Rate - Marion - Black": {
+                "description": "The poverty rate in Marion County for the Black demographic"
+            },
+            "Poverty Rate - Marion - Hispanic": {
+                "description": "The poverty rate in Marion County for the Hispanic demographic"
+            },
+            "Poverty Rate - Marion - White": {
+                "description": "The poverty rate in Marion County for the White demographic"
+            },
+            "Poverty Rate - Marion - Under 18": {
+                "description": "The poverty rate in Marion County for individuals under the age of 18"
+            },
+            "Poverty Rate - Marion - Ages 18-64": {
+                "description": "The poverty rate in Marion County for individuals aged 18 to 64"
+            },
+            "Poverty Rate - Marion - Age 65 and Over": {
+                "description": "The poverty rate in Marion County for individuals aged 65 and older"
+            },
+            "Median Household Income - Indiana State": {
+                "description": "The median household income for the entire state of Indiana"
+            },
+            "Median Household Income - Metropolitan IN": {
+                "description": "The median household income for metropolitan areas within Indiana"
+            },
+            "Median Household Income - Marion County": {
+                "description": "The median household income for Marion County"
+            },
+            "Median Household Income - Asian": {
+                "description": "The median household income in Marion County for the Asian demographic"
+            },
+            "Median Household Income - Black": {
+                "description": "The median household income in Marion County for the Black demographic"
+            },
+            "Median Household Income - Hispanic": {
+                "description": "The median household income in Marion County for the Hispanic demographic"
+            },
+            "Median Household Income - White": {
+                "description": "The median household income in Marion County for the White demographic"
+            },
+            "Marion County - Households by Income Level Below ALICE Above Pov.": {
+                "description": "The number of households in Marion County that are above poverty line but below ALICE threshold"
+            },
+            "Marion County - Households by Income Level Below Poverty": {
+                "description": "The number of households in Marion County that fall below the poverty line"
+            },
+            "Marion County - ALICE Households by Age Under 25": {
+                "description": "The number of ALICE households in Marion County for individuals under age 25"
+            },
+            "Marion County - ALICE Households by Age 25-44": {
+                "description": "The number of ALICE households in Marion County for individuals aged 25-44"
+            },
+            "Marion County - ALICE Households by Age 45-64": {
+                "description": "The number of ALICE households in Marion County for individuals aged 45-64"
+            },
+            "Marion County - ALICE Households by Age 65 and Over": {
+                "description": "The number of ALICE households in Marion County for individuals aged 65 and older"
+            }
+        }
+    },
+ 
+  "svi_indiana_in": {
+    "description": "Provides comprehensive data related to social vulnerability indices across various communities in Indiana. The Social Vulnerability Index (SVI) uses 2016-2020 American Community Survey (ACS) data to identify communities that may need support before, during, and after disasters.",
+    "columns": {
+      "ST": {
+        "description": "State-level FIPS code"
+      },
+      "STATE": {
+        "description": "State name"
+      },
+      "ST_ABBR": {
+        "description": "State abbreviation"
+      },
+      "STCNTY": {
+        "description": "County-level FIPS code"
+      },
+      "COUNTY": {
+        "description": "County name"
+      },
+      "FIPS": {
+        "description": "Tract-level FIPS code"
+      },
+      "LOCATION": {
+        "description": "Text description of tract, county, state"
+      },
+      "AREA_SQMI": {
+        "description": "Tract area in square miles"
+      },
+      "E_TOTPOP": {
+        "description": "Population estimate (2016-2020 ACS)"
+      },
+      "M_TOTPOP": {
+        "description": "Population estimate MOE (2016-2020 ACS)"
+      },
+      "E_HU": {
+        "description": "Housing units estimate (2016-2020 ACS)"
+      },
+      "M_HU": {
+        "description": "Housing units estimate MOE (2016-2020 ACS)"
+      },
+      "E_HH": {
+        "description": "Households estimate (2016-2020 ACS)"
+      },
+      "M_HH": {
+        "description": "Households estimate MOE (2016-2020 ACS)"
+      },
+      "E_POV150": {
+        "description": "Persons below 150% poverty estimate (2016-2020 ACS)"
+      },
+      "M_POV150": {
+        "description": "Persons below 150% poverty estimate MOE (2016-2020 ACS)"
+      },
+      "EP_POV150": {
+        "description": "Percentage of persons below 150% poverty estimate"
+      },
+      "MP_POV150": {
+        "description": "Percentage of persons below 150% poverty estimate MOE"
+      },
+      "EPL_POV150": {
+        "description": "Percentile percentage of persons below 150% poverty estimate"
+      },
+      "E_UNEMP": {
+        "description": "Civilian (age 16+) unemployed estimate (2016-2020 ACS)"
+      },
+      "M_UNEMP": {
+        "description": "Civilian (age 16+) unemployed estimate MOE (2016-2020 ACS)"
+      },
+      "EP_UNEMP": {
+        "description": "Unemployment rate estimate"
+      },
+      "MP_UNEMP": {
+        "description": "Unemployment rate estimate MOE"
+      },
+      "EPL_UNEMP": {
+        "description": "Percentile percentage of civilian (age 16+) unemployed estimate"
+      },
+      "E_HBURD": {
+        "description": "Housing cost-burdened occupied housing units with annual income < $75,000 estimate"
+      },
+      "M_HBURD": {
+        "description": "Housing cost-burdened occupied housing units estimate MOE"
+      },
+      "EP_HBURD": {
+        "description": "Percentage of housing cost-burdened occupied housing units estimate"
+      },
+      "MP_HBURD": {
+        "description": "Percentage of housing cost-burdened occupied housing units estimate MOE"
+      },
+      "EPL_HBURD": {
+        "description": "Percentile percentage of housing cost-burdened occupied housing units estimate"
+      },
+      "E_NOHSDP": {
+        "description": "Persons (age 25+) with no high school diploma estimate"
+      },
+      "M_NOHSDP": {
+        "description": "Persons with no high school diploma estimate MOE"
+      },
+      "EP_NOHSDP": {
+        "description": "Percentage of persons with no high school diploma (age 25+) estimate"
+      },
+      "MP_NOHSDP": {
+        "description": "Percentage of persons with no high school diploma estimate MOE"
+      },
+      "EPL_NOHSDP": {
+        "description": "Percentile percentage of persons with no high school diploma estimate"
+      },
+      "E_UNINSUR": {
+        "description": "Uninsured in the total civilian noninstitutionalized population estimate"
+      },
+      "M_UNINSUR": {
+        "description": "Uninsured population estimate MOE"
+      },
+      "EP_UNINSUR": {
+        "description": "Percentage uninsured in the total civilian noninstitutionalized population"
+      },
+      "MP_UNINSUR": {
+        "description": "Percentage uninsured estimate MOE"
+      },
+      "EPL_UNINSUR": {
+        "description": "Percentile percentage of uninsured estimate"
+      },
+      "E_AGE65": {
+        "description": "Persons aged 65 and older estimate"
+      },
+      "M_AGE65": {
+        "description": "Persons aged 65 and older estimate MOE"
+      },
+      "EP_AGE65": {
+        "description": "Percentage of persons aged 65 and older estimate"
+      },
+      "MP_AGE65": {
+        "description": "Percentage of persons aged 65 and older estimate MOE"
+      },
+      "EPL_AGE65": {
+        "description": "Percentile percentage of persons aged 65 and older estimate"
+      },
+      "E_AGE17": {
+        "description": "Persons aged 17 and younger estimate"
+      },
+      "M_AGE17": {
+        "description": "Persons aged 17 and younger estimate MOE"
+      },
+      "EP_AGE17": {
+        "description": "Percentage of persons aged 17 and younger estimate"
+      },
+      "MP_AGE17": {
+        "description": "Percentage of persons aged 17 and younger estimate MOE"
+      },
+      "EPL_AGE17": {
+        "description": "Percentile percentage of persons aged 17 and younger estimate"
+      },
+      "E_DISABL": {
+        "description": "Civilian noninstitutionalized population with a disability estimate"
+      },
+      "M_DISABL": {
+        "description": "Population with a disability estimate MOE"
+      },
+      "EP_DISABL": {
+        "description": "Percentage of civilian noninstitutionalized population with a disability"
+      },
+      "MP_DISABL": {
+        "description": "Percentage of population with a disability estimate MOE"
+      },
+      "EPL_DISABL": {
+        "description": "Percentile percentage of population with a disability estimate"
+      },
+      "E_SNGPNT": {
+        "description": "Single-parent household with children under 18 estimate"
+      },
+      "M_SNGPNT": {
+        "description": "Single-parent household estimate MOE"
+      },
+      "EP_SNGPNT": {
+        "description": "Percentage of single-parent households with children under 18"
+      },
+      "MP_SNGPNT": {
+        "description": "Percentage of single-parent households estimate MOE"
+      },
+      "EPL_SNGPNT": {
+        "description": "Percentile percentage of single-parent households estimate"
+      },
+      "E_LIMENG": {
+        "description": "Persons (age 5+) who speak English \"less than well\" estimate"
+      },
+      "M_LIMENG": {
+        "description": "Limited English proficiency estimate MOE"
+      },
+      "EP_LIMENG": {
+        "description": "Percentage of persons who speak English \"less than well\""
+      },
+      "MP_LIMENG": {
+        "description": "Percentage of limited English proficiency estimate MOE"
+      },
+      "EPL_LIMENG": {
+        "description": "Percentile percentage of limited English proficiency estimate"
+      },
+      "E_MINRTY": {
+        "description": "Minority (all persons except white, non-Hispanic) estimate"
+      },
+      "M_MINRTY": {
+        "description": "Minority estimate MOE"
+      },
+      "EP_MINRTY": {
+        "description": "Percentage of minority estimate"
+      },
+      "MP_MINRTY": {
+        "description": "Percentage of minority estimate MOE"
+      },
+      "EPL_MINRTY": {
+        "description": "Percentile percentage of minority estimate"
+      },
+      "E_MUNIT": {
+        "description": "Housing in structures with 10 or more units estimate"
+      },
+      "M_MUNIT": {
+        "description": "Multi-unit housing estimate MOE"
+      },
+      "EP_MUNIT": {
+        "description": "Percentage of housing in structures with 10 or more units"
+      },
+      "MP_MUNIT": {
+        "description": "Percentage of multi-unit housing estimate MOE"
+      },
+      "EPL_MUNIT": {
+        "description": "Percentile percentage of multi-unit housing estimate"
+      },
+      "E_MOBILE": {
+        "description": "Mobile homes estimate"
+      },
+      "M_MOBILE": {
+        "description": "Mobile homes estimate MOE"
+      },
+      "EP_MOBILE": {
+        "description": "Percentage of mobile homes estimate"
+      },
+      "MP_MOBILE": {
+        "description": "Percentage of mobile homes estimate MOE"
+      },
+      "EPL_MOBILE": {
+        "description": "Percentile percentage of mobile homes estimate"
+      },
+      "E_CROWD": {
+        "description": "At household level, more people than rooms estimate"
+      },
+      "M_CROWD": {
+        "description": "Crowded housing estimate MOE"
+      },
+      "EP_CROWD": {
+        "description": "Percentage of crowded housing units estimate"
+      },
+      "MP_CROWD": {
+        "description": "Percentage of crowded housing estimate MOE"
+      },
+      "EPL_CROWD": {
+        "description": "Percentile percentage of crowded housing estimate"
+      },
+      "E_NOVEH": {
+        "description": "Households with no vehicle available estimate"
+      },
+      "M_NOVEH": {
+        "description": "No vehicle households estimate MOE"
+      },
+      "EP_NOVEH": {
+        "description": "Percentage of households with no vehicle available"
+      },
+      "MP_NOVEH": {
+        "description": "Percentage of no vehicle households estimate MOE"
+      },
+      "EPL_NOVEH": {
+        "description": "Percentile percentage of no vehicle households estimate"
+      },
+      "E_GROUPQ": {
+        "description": "Persons in group quarters estimate"
+      },
+      "M_GROUPQ": {
+        "description": "Group quarters population estimate MOE"
+      },
+      "EP_GROUPQ": {
+        "description": "Percentage of persons in group quarters estimate"
+      },
+      "MP_GROUPQ": {
+        "description": "Percentage of group quarters population estimate MOE"
+      },
+      "EPL_GROUPQ": {
+        "description": "Percentile percentage of group quarters population estimate"
+      },
+      "SPL_THEME1": {
+        "description": "Sum of series for Socioeconomic Status theme"
+      },
+      "RPL_THEME1": {
+        "description": "Percentile ranking for Socioeconomic Status theme summary"
+      },
+      "SPL_THEME2": {
+        "description": "Sum of series for Household Characteristics theme"
+      },
+      "RPL_THEME2": {
+        "description": "Percentile ranking for Household Characteristics theme"
+      },
+      "SPL_THEME3": {
+        "description": "Sum of series for Racial and Ethnic Minority Status theme"
+      },
+      "RPL_THEME3": {
+        "description": "Percentile ranking for Racial and Ethnic Minority Status theme"
+      },
+      "SPL_THEME4": {
+        "description": "Sum of series for Housing Type/Transportation theme"
+      },
+      "RPL_THEME4": {
+        "description": "Percentile ranking for Housing Type/Transportation theme"
+      },
+      "SPL_THEMES": {
+        "description": "Summary percentile rank for all themes"
+      },
+      "RPL_THEMES": {
+        "description": "Relative ranking for all themes"
+      },
+      "F_POV150": {
+        "description": "Flag - percentage of persons below 150% poverty is in 90th percentile (1=yes, 0=no)"
+      },
+      "F_UNEMP": {
+        "description": "Flag - percentage of civilian unemployed is in 90th percentile (1=yes, 0=no)"
+      },
+      "F_HBURD": {
+        "description": "Flag - percentage of housing cost-burdened units is in 90th percentile (1=yes, 0=no)"
+      },
+      "F_NOHSDP": {
+        "description": "Flag - percentage of persons with no high school diploma is in 90th percentile (1=yes, 0=no)"
+      },
+      "F_UNINSUR": {
+        "description": "Flag - percentage of uninsured is in 90th percentile (1=yes, 0=no)"
+      },
+      "F_THEME1": {
+        "description": "Sum of flags for Socioeconomic Status theme"
+      },
+      "F_AGE65": {
+        "description": "Flag - percentage of persons aged 65 and older is in 90th percentile (1=yes, 0=no)"
+      },
+      "F_AGE17": {
+        "description": "Flag - percentage of persons aged 17 and younger is in 90th percentile (1=yes, 0=no)"
+      },
+      "F_DISABL": {
+        "description": "Flag - percentage of persons with a disability is in 90th percentile (1=yes, 0=no)"
+      },
+      "F_SNGPNT": {
+        "description": "Flag - percentage of single-parent households is in 90th percentile (1=yes, 0=no)"
+      },
+      "F_LIMENG": {
+        "description": "Flag - percentage of those with limited English is in 90th percentile (1=yes, 0=no)"
+      },
+      "F_THEME2": {
+        "description": "Sum of flags for Household Characteristics theme"
+      },
+      "F_MINRTY": {
+        "description": "Flag - percentage of minority is in 90th percentile (1=yes, 0=no)"
+      },
+      "F_THEME3": {
+        "description": "Sum of flags for Racial and Ethnic Minority Status theme"
+      },
+      "F_MUNIT": {
+        "description": "Flag - percentage of households in multi-unit housing is in 90th percentile (1=yes, 0=no)"
+      },
+      "F_MOBILE": {
+        "description": "Flag - percentage of mobile homes is in 90th percentile (1=yes, 0=no)"
+      },
+            "F_CROWD": {
+        "description": "Flag - percentage of crowded households is in 90th percentile (1=yes, 0=no)"
+      },
+      "F_NOVEH": {
+        "description": "Flag - percentage of households with no vehicles is in 90th percentile (1=yes, 0=no)"
+      },
+      "F_GROUPQ": {
+        "description": "Flag - percentage of persons in group quarters is in 90th percentile (1=yes, 0=no)"
+      },
+      "F_THEME4": {
+        "description": "Sum of flags for Housing Type/Transportation theme"
+      },
+      "F_TOTAL": {
+        "description": "Sum of flags for the four themes"
+      },
+      "E_DAYPOP": {
+        "description": "Estimated daytime population, LandScan 2020"
+      },
+      "E_NOINT": {
+        "description": "Households without computer with broadband Internet subscription estimate"
+      },
+      "M_NOINT": {
+        "description": "Households without computer with broadband Internet subscription estimate MOE"
+      },
+      "EP_NOINT": {
+        "description": "Percentage of households without computer with broadband Internet subscription"
+      },
+      "MP_NOINT": {
+        "description": "Percentage of households without computer with broadband Internet subscription MOE"
+      },
+      "E_AFAM": {
+        "description": "Black/African American, not Hispanic or Latino persons estimate"
+      },
+      "M_AFAM": {
+        "description": "Black/African American, not Hispanic or Latino persons estimate MOE"
+      },
+      "EP_AFAM": {
+        "description": "Percentage of Black/African American, not Hispanic or Latino persons"
+      },
+      "MP_AFAM": {
+        "description": "Percentage of Black/African American, not Hispanic or Latino persons MOE"
+      },
+      "E_HISP": {
+        "description": "Hispanic or Latino persons estimate"
+      },
+      "M_HISP": {
+        "description": "Hispanic or Latino persons estimate MOE"
+      },
+      "EP_HISP": {
+        "description": "Percentage of Hispanic or Latino persons"
+      },
+      "MP_HISP": {
+        "description": "Percentage of Hispanic or Latino persons MOE"
+      },
+      "E_ASIAN": {
+        "description": "Asian, not Hispanic or Latino persons estimate"
+      },
+      "M_ASIAN": {
+        "description": "Asian, not Hispanic or Latino persons estimate MOE"
+      },
+      "EP_ASIAN": {
+        "description": "Percentage of Asian, not Hispanic or Latino persons"
+      },
+      "MP_ASIAN": {
+        "description": "Percentage of Asian, not Hispanic or Latino persons MOE"
+      },
+      "E_AIAN": {
+        "description": "American Indian or Alaska Native, not Hispanic or Latino persons estimate"
+      },
+      "M_AIAN": {
+        "description": "American Indian or Alaska Native, not Hispanic or Latino persons estimate MOE"
+      },
+      "EP_AIAN": {
+        "description": "Percentage of American Indian or Alaska Native, not Hispanic or Latino persons"
+      },
+      "MP_AIAN": {
+        "description": "Percentage of American Indian or Alaska Native, not Hispanic or Latino persons MOE"
+      },
+      "E_NHPI": {
+        "description": "Native Hawaiian or Other Pacific Islander, not Hispanic or Latino persons estimate"
+      },
+      "M_NHPI": {
+        "description": "Native Hawaiian or Other Pacific Islander, not Hispanic or Latino persons estimate MOE"
+      },
+      "EP_NHPI": {
+        "description": "Percentage of Native Hawaiian or Other Pacific Islander, not Hispanic or Latino persons"
+      },
+      "MP_NHPI": {
+        "description": "Percentage of Native Hawaiian or Other Pacific Islander, not Hispanic or Latino persons MOE"
+      },
+      "E_TWOMORE": {
+        "description": "Two or more races, not Hispanic or Latino persons estimate"
+      },
+      "M_TWOMORE": {
+        "description": "Two or more races, not Hispanic or Latino persons estimate MOE"
+      },
+      "EP_TWOMORE": {
+        "description": "Percentage of two or more races, not Hispanic or Latino persons"
+      },
+      "MP_TWOMORE": {
+        "description": "Percentage of two or more races, not Hispanic or Latino persons MOE"
+      },
+      "E_OTHERRACE": {
+        "description": "Some other race, not Hispanic or Latino persons estimate"
+      },
+      "M_OTHERRACE": {
+        "description": "Some other race, not Hispanic or Latino persons estimate MOE"
+      },
+      "EP_OTHERRACE": {
+        "description": "Percentage of some other race, not Hispanic or Latino persons"
+      },
+      "MP_OTHERRACE": {
+        "description": "Percentage of some other race, not Hispanic or Latino persons MOE"
+      }
+    }
+  }
+}
+
+
+
