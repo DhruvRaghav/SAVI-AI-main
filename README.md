@@ -36,4 +36,4 @@ SAVI AI is a **Text-to-SQL** Query System that enables users to interact with da
 
 ## Sample Output:
 
-<img width="1027" alt="Screenshot 2025-04-03 at 12 32 08 AM" src="https://github.iu.edu/polis-comet-lab/SAVI-AI/assets/25093/9a788320-3d95-442e-8f56-04ef17313ee9">
+<img width="1027" alt="Screenshot 2025-04-03 at 12 32 08 AM" src="https://github.com/DhruvRaghav/SAVI-AI-main/blob/main/9a788320-3d95-442e-8f56-04ef17313ee9.png">
